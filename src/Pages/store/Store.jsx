@@ -1,4 +1,5 @@
 import "./store.css";
+import Item from "../../components/item/Item";
 
 const Store = () => {
   return (
@@ -7,138 +8,17 @@ const Store = () => {
         <h1>All Items</h1>
         <div className="items-container">
           {/* items will be their own component */}
-          <div className="item">
-            <div className="item-image-container"></div>
-            <div className="item-info-container">
-              <div className="item-info-container-top">
-                <div className="item-name">Item name</div>
-              </div>
-              <div className="item-info-container-bottom">
-                <div className="item-subtext">Subtext</div>
-                <div className="item-price">price</div>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item-image-container"></div>
-            <div className="item-info-container">
-              <div className="item-info-container-top">
-                <div className="item-name">Item name</div>
-              </div>
-              <div className="item-info-container-bottom">
-                <div className="item-subtext">Subtext</div>
-                <div className="item-price">price</div>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item-image-container"></div>
-            <div className="item-info-container">
-              <div className="item-info-container-top">
-                <div className="item-name">Item name</div>
-              </div>
-              <div className="item-info-container-bottom">
-                <div className="item-subtext">Subtext</div>
-                <div className="item-price">price</div>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item-image-container"></div>
-            <div className="item-info-container">
-              <div className="item-info-container-top">
-                <div className="item-name">Item name</div>
-              </div>
-              <div className="item-info-container-bottom">
-                <div className="item-subtext">Subtext</div>
-                <div className="item-price">price</div>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item-image-container"></div>
-            <div className="item-info-container">
-              <div className="item-info-container-top">
-                <div className="item-name">Item name</div>
-              </div>
-              <div className="item-info-container-bottom">
-                <div className="item-subtext">Subtext</div>
-                <div className="item-price">price</div>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item-image-container"></div>
-            <div className="item-info-container">
-              <div className="item-info-container-top">
-                <div className="item-name">Item name</div>
-              </div>
-              <div className="item-info-container-bottom">
-                <div className="item-subtext">Subtext</div>
-                <div className="item-price">price</div>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item-image-container"></div>
-            <div className="item-info-container">
-              <div className="item-info-container-top">
-                <div className="item-name">Item name</div>
-              </div>
-              <div className="item-info-container-bottom">
-                <div className="item-subtext">Subtext</div>
-                <div className="item-price">price</div>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item-image-container"></div>
-            <div className="item-info-container">
-              <div className="item-info-container-top">
-                <div className="item-name">Item name</div>
-              </div>
-              <div className="item-info-container-bottom">
-                <div className="item-subtext">Subtext</div>
-                <div className="item-price">price</div>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item-image-container"></div>
-            <div className="item-info-container">
-              <div className="item-info-container-top">
-                <div className="item-name">Item name</div>
-              </div>
-              <div className="item-info-container-bottom">
-                <div className="item-subtext">Subtext</div>
-                <div className="item-price">price</div>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item-image-container"></div>
-            <div className="item-info-container">
-              <div className="item-info-container-top">
-                <div className="item-name">Item name</div>
-              </div>
-              <div className="item-info-container-bottom">
-                <div className="item-subtext">Subtext</div>
-                <div className="item-price">price</div>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item-image-container"></div>
-            <div className="item-info-container">
-              <div className="item-info-container-top">
-                <div className="item-name">Item name</div>
-              </div>
-              <div className="item-info-container-bottom">
-                <div className="item-subtext">Subtext</div>
-                <div className="item-price">price</div>
-              </div>
-            </div>
-          </div>
+          <Item/>
+          <Item/>
+          <Item/>
+          <Item/>
+          <Item/>
+          <Item/>
+          <Item/>
+          <Item/> 
+          <Item/> 
+          <Item/> 
+          <Item/> 
         </div>
       </div>
     </div>

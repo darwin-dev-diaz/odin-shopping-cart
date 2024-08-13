@@ -9,3 +9,6 @@
     --medium-grey: #8E928E;
     --dark-grey: #515351;
   }
+
+
+@import url("../../styles/colors.css");
