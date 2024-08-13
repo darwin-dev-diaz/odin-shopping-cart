@@ -5,4 +5,12 @@
 
 .app{
     font-family: "Poppins", Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.body{
+  flex: 1 1 auto;
+
 }
