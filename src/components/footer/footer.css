@@ -1,0 +1,34 @@
+@import url("../../styles/colors.css");
+
+.footer{
+    background-color: #18181B;
+    width: 100%;
+    height: 500px;
+}
+
+.footer-top{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+}
+
+.footer-top-title{
+    padding-bottom: 20px;
+    color: #6C6C73;
+}
+
+.footer-top-text{
+    color: #A1A1AA;
+
+}
+
+.footer-top-left,
+.footer-top-right{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+}

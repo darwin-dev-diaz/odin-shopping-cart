@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Poppins'; /* Name your font family */
+    src: url('../assets/Poppins-Regular.ttf'); /* Locate the .ttf file within your directory*/
+  }
+
+.app{
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
