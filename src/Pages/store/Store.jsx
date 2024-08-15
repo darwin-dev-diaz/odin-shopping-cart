@@ -1,9 +1,9 @@
 import "./store.css";
 import Item from "../../components/item/Item";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 const Store = () => {
-  const [itemInfo, setItemInfo] = useState([]);
+  // const [itemInfo, setItemInfo] = useState([]);
 
   // useEffect(() => {
   //   async function getData() {

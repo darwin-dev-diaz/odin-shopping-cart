@@ -25,9 +25,9 @@ const ProductPage = () => {
             vitae voluptatibus. Consequuntur sequi assumenda vitae tempore
             aperiam, voluptates, fugit e.
           </p>
-          <p className="product-technical-details">COLOR: Red</p>
+          <p className="product-technical-details">COLOR: Green</p>
         </div>
-        <form noValidate="">
+        <form noValidate="" className="product_form">
           <label htmlFor="product-quantity" className="product-quantity-label">
             QUANTITY:
             <input
@@ -37,7 +37,6 @@ const ProductPage = () => {
               id="product-quantity"
               max="14"
               min="1"
-              value="1"
             />
           </label>
           <button className="product-cart-btn" type="submit">

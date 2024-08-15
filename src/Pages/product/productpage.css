@@ -121,7 +121,7 @@ hr {
   background-color: var(--dark-green);
 }
 
-form {
+.product_form {
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -137,3 +137,14 @@ form {
 .product-description-paragraph{
     padding-bottom: 35px;
 }
+
+/* hide number input increments  */
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+} */
