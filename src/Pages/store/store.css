@@ -2,7 +2,7 @@
 
 
 .store{
-    background-color: var(--white-green);
+    /* background-color: var(--white-green); */
     width: 100%;
     height: auto;
     display: flex;

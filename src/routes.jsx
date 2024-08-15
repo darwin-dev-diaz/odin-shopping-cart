@@ -1,5 +1,6 @@
 import App from "./pages/App.jsx";
 import Store from "./pages/store/Store.jsx";
+import ProductPage from "./pages/product/ProductPage.jsx";
 
 const routes = [
   {
@@ -8,7 +9,7 @@ const routes = [
     children: [
       { index: true, element: null },
       { path: "store", element: <Store /> },
-      { path: "product", element: null },
+      { path: "product", element: <ProductPage /> },
     ],
   },
 ];
