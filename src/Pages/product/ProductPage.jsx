@@ -16,7 +16,7 @@ const ProductPage = () => {
         <h2 className="product-name">Item Name</h2>
         <div className="price-container">
           <span className="price">$4.00</span>
-          <span className="old-price">$2.30</span>
+          <span className="old-price"><s>$2.30</s></span>
         </div>
         <hr />
         <div className="product-description-container">
@@ -25,11 +25,11 @@ const ProductPage = () => {
             vitae voluptatibus. Consequuntur sequi assumenda vitae tempore
             aperiam, voluptates, fugit e.
           </p>
-          <p className="product-technical-details-container">COLOR: Red</p>
+          <p className="product-technical-details">COLOR: Red</p>
         </div>
         <form noValidate="">
-          <label htmlFor="product-quantity" className=" product-quantity-label">
-            Quantity:
+          <label htmlFor="product-quantity" className="product-quantity-label">
+            QUANTITY:
             <input
               type="number"
               className="product-quantity-input"
