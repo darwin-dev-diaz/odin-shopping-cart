@@ -1,0 +1,39 @@
+@import url("../../styles/colors.css");
+
+.company_message{
+    display: flex;
+    padding: 60px 120px 60px 120px;
+    justify-content: space-evenly;
+    align-items: start;
+    background-color: var(--white-green);
+}
+
+.image_container{
+    height: 600px;
+    width: 400px;
+}
+
+.image_container > img{
+    height: 100%;
+    width: 100%; 
+}
+
+.company_message_left{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.company_message_title{
+    font-size: 40px;
+}
+.company_message_text{
+    width: 500px;
+}
+
+.company_message_shop_btn{
+    text-underline-offset: 6px;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    color: black;
+    font-weight: 600;
+}
