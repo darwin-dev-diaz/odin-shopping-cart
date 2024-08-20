@@ -19,6 +19,19 @@ const Carousel = () => {
       setCarouselIndex(carouselIndex + direction);
     }
   };
+  useEffect(() => {
+
+
+    const carouselImagePostions = document.querySelectorAll(
+      "." + styles.image_selector
+    );
+    carouselImagePostions.forEach((imagePosition) => {
+      imagePosition.classList.remove(styles.image_selector_filled);
+    });
+    carouselImagePostions[carouselIndex].classList.add(
+      styles.image_selector_filled
+    );
+  }, [carouselIndex]);
   return (
     <div
       className={styles.carousel}
@@ -30,7 +43,10 @@ const Carousel = () => {
       >
         <ForwardArrowSVG />
       </div>
-      <div className={styles.back_arrow} onClick={() => changeCarouselIndex(-1)}>
+      <div
+        className={styles.back_arrow}
+        onClick={() => changeCarouselIndex(-1)}
+      >
         <ForwardArrowSVG />
       </div>
       <Link to="/store" className={styles.carousel_shop_button}>
