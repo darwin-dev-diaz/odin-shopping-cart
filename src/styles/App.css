@@ -1,15 +1,20 @@
 @font-face {
-    font-family: 'Poppins'; /* Name your font family */
-    src: url('../assets/Poppins-Regular.ttf'); /* Locate the .ttf file within your directory*/
-  }
-
-.app{
-    font-family: "Poppins", Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
+  font-family: "Poppins"; /* Name your font family */
+  src: url("../assets/Poppins-Regular.ttf"); /* Locate the .ttf file within your directory*/
 }
 
-.body{
-  flex: 1 1 auto;
+.app {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
 
+.body {
+  flex: 1 1 auto;
+}
+
+.no-scroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
 }

@@ -5,10 +5,21 @@ import ShoppingCart from "../components/shopping-cart/ShoppingCart";
 import "../styles/reset.css";
 import "../styles/App.css";
 import { Outlet } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 function App() {
   const [showShoppingCart, setShowShoppingCart] = useState(false);
-  console.log({ showShoppingCart });
+
+  useEffect(() => {
+    if (showShoppingCart) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [showShoppingCart]);
 
   return (
     <div className="app">
