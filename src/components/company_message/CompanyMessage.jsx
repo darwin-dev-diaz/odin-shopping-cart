@@ -16,16 +16,6 @@ const CompanyMessage = () => {
           respect for nature, ensuring that our products contribute positively
           to the world around us.
         </p>
-        {/* <p className={styles.company_message_text}>
-          Moreover, green represents growth, renewal, and a fresh
-          perspective—values that are at the core of our brand identity. We are
-          constantly innovating, seeking out new ways to enhance our products
-          and processes while staying true to our commitment to sustainability.
-          Our love for green drives us to explore creative solutions that not
-          only meet the needs of today but also safeguard the future. In every
-          stitch and seam, you’ll find our dedication to creating fashion that
-          is both beautiful and responsible.
-        </p> */}
         <Link to="/store" className={styles.company_message_shop_btn}>
           Shop Now
         </Link>

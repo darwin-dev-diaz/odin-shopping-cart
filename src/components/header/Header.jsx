@@ -2,8 +2,9 @@ import "./header.css";
 import LogoSVG from "../../assets/LogoSVG";
 import ShoppingCartSVG from "../../assets/ShoppingCartSVG";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types"
 
-const Header = () => {
+const Header = ({onCartClick}) => {
   return (
     <div className="header">
       <LogoSVG className="header-logo" />
@@ -15,10 +16,14 @@ const Header = () => {
           Store
         </Link>
 
-        <ShoppingCartSVG />
+        <ShoppingCartSVG onClick={onCartClick}/>
       </div>
     </div>
   );
 };
+
+Header.propTypes = {
+  onCartClick: PropTypes.func,
+}
 
 export default Header;
