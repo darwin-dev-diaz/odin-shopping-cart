@@ -19,9 +19,8 @@ const Carousel = () => {
       setCarouselIndex(carouselIndex + direction);
     }
   };
+
   useEffect(() => {
-
-
     const carouselImagePostions = document.querySelectorAll(
       "." + styles.image_selector
     );
@@ -32,6 +31,7 @@ const Carousel = () => {
       styles.image_selector_filled
     );
   }, [carouselIndex]);
+  
   return (
     <div
       className={styles.carousel}

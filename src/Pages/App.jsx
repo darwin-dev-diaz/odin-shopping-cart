@@ -7,12 +7,15 @@ import "../styles/App.css";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
 function App() {
-  const [showShoppingCart, setShowShoppingCart] = useState(true);
+  const [showShoppingCart, setShowShoppingCart] = useState(false);
+  console.log({ showShoppingCart });
 
   return (
     <div className="app">
-      <Header onCartClick={() => setShowShoppingCart(!showShoppingCart)} />
-      {showShoppingCart ? <ShoppingCart /> : null}
+      <Header onCartClick={() => setShowShoppingCart(true)} />
+      {showShoppingCart ? (
+        <ShoppingCart onClose={() => setShowShoppingCart(false)} />
+      ) : null}
       <div className="body">
         <Outlet />
       </div>
