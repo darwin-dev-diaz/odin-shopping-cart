@@ -9,6 +9,11 @@ const useData = () => {
 
   useEffect(() => {
     fetch(link, { mode: "cors" })
+      .then((result) => {
+        return new Promise((resolve) => {
+          setTimeout(() => resolve(result), 500);
+        });
+      })
       .then((response) => {
         if (response.status >= 400) {
           throw new Error("Server error");

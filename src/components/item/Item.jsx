@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import loading from "../../assets/loading.gif"
 
 
-const test = "https://res.cloudinary.com/dr2ufkyd4/image/fetch/w_300,h_300,f_webp,q_auto/https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenTshirt01.jpg?v=1675455410"
-const Item = ({imageURL = null, itemPrice = 70 , itemName = "Default Shirt"}) => {
+const Item = ({imageURL = loading, itemPrice = 0 , itemName = "Loading"}) => {
   return (
     <div className="item">
       <div className="item-image-container">
