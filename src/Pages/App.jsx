@@ -7,7 +7,7 @@ import "../styles/App.css";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
 function App() {
-  const [showShoppingCart, setShowShoppingCart] = useState(false);
+  const [showShoppingCart, setShowShoppingCart] = useState(true);
 
   return (
     <div className="app">
