@@ -1,0 +1,81 @@
+@import url("../../styles/colors.css");
+
+.cart_item {
+  width: 500px;
+  height: 150px;
+  background-color: var(--white-green);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  display: flex;
+}
+
+.cart_item_img {
+  background-color: red;
+  width: 150px;
+  height: 150px;
+}
+
+.cart_item_right {
+  width: 80%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.cart_item_top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart_item_title {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.delete_btn {
+  height: 25px;
+  width: 25px;
+  fill: rgb(166, 0, 0);
+  cursor: pointer;
+}
+
+.product_quantity_label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  width: auto;
+}
+
+.cart_item_bottom{
+    width: 100%;
+}
+.product_form {
+    width: 100%;
+  display: flex;
+  gap: 35px;
+}
+.product_quantity_input {
+    width: 60px;
+    padding: 6px 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  .product_quantity_input:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: var(--dark-green);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem var(--dark-green);
+  }
