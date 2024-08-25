@@ -1,4 +1,4 @@
-import styles  from"./store.module.css";
+import styles from "./store.module.css";
 import Item from "../../components/item/Item";
 import { useOutletContext, Link } from "react-router-dom";
 
@@ -16,7 +16,7 @@ const Store = () => {
                 <Link className={styles.item_link} key={i} to={`/product/${i}`}>
                   <Item
                     imageURL={item.imageURL}
-                    itemPrice={10}
+                    itemPrice={Number(item.itemPrice)}
                     itemName={item.itemTitle}
                     key={i}
                   />

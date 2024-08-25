@@ -27,6 +27,7 @@ const useData = () => {
             imageURL: product.node.featuredImage.url,
             itemTitle: product.node.title,
             itemDescription: product.node.description,
+            itemPrice: product.node.variants.edges[0].node.price.amount
           };
         });
         setData(outputArray);

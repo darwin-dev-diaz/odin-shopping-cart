@@ -12,7 +12,6 @@ function App() {
   const [cart, setCart] = useState({});
   const {data, error, loading} = useData();
 
-  // useEffect(()=>{console.log(data)},[data])
 
   useEffect(() => {
     if (showShoppingCart) {
