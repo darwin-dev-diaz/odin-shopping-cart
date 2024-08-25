@@ -6,8 +6,6 @@ const ProductPage = () => {
   const [cart, setCart, data, error, loading] = useOutletContext();
   const { item } = useParams();
 
-  console.log({data, item})
-
   return (
     <div className={styles.product_page}>
       <div className={styles.product_page_left}>
@@ -23,9 +21,9 @@ const ProductPage = () => {
       <div className={styles.product_page_right}>
         <h2 className={styles.product_name}>{loading ? "Loading" : data[item].itemTitle}</h2>
         <div className={styles.price_container}>
-          <span className={styles.price}>${loading ? "Loading" : Number(data[item].itemPrice)}</span>
+          <span className={styles.price}>{loading ? "Loading" : "$" + Number(data[item].itemPrice)}</span>
           <span className={styles.old_price}>
-            <s>${loading ? "Loading" : Number(data[item].itemPrice) + 60}</s>
+            <s>{loading ? "Loading" : "$" + (Number(data[item].itemPrice) + 60)}</s>
           </span>
         </div>
         <hr />

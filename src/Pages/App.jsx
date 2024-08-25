@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import useData from "../util/useData";
 function App() {
   const [showShoppingCart, setShowShoppingCart] = useState(false);
-  const [cart, setCart] = useState({});
+  const [cart, setCart] = useState([]);
   const {data, error, loading} = useData();
 
 
