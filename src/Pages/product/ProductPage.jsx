@@ -1,10 +1,15 @@
+/* eslint-disable no-unused-vars */
 import styles from "./productpage.module.css";
-import loadingGif from "../../assets/loading.gif"
+import loadingGif from "../../assets/loading.gif";
 import { useOutletContext, useParams } from "react-router-dom";
+import { useState } from "react";
 
 const ProductPage = () => {
-  const [cart, setCart, data, error, loading] = useOutletContext();
+  const [cart, setCart, data, error, loading, newCartEntry] =
+    useOutletContext();
   const { item } = useParams();
+  const [quantity, setQuantity] = useState(1);
+  const itemInCart = cart.some((cartItem) => cartItem.key === item);
 
   return (
     <div className={styles.product_page}>
@@ -19,17 +24,23 @@ const ProductPage = () => {
         </div>
       </div>
       <div className={styles.product_page_right}>
-        <h2 className={styles.product_name}>{loading ? "Loading" : data[item].itemTitle}</h2>
+        <h2 className={styles.product_name}>
+          {loading ? "Loading" : data[item].itemTitle}
+        </h2>
         <div className={styles.price_container}>
-          <span className={styles.price}>{loading ? "Loading" : "$" + Number(data[item].itemPrice)}</span>
+          <span className={styles.price}>
+            {loading ? "Loading" : "$" + Number(data[item].itemPrice)}
+          </span>
           <span className={styles.old_price}>
-            <s>{loading ? "Loading" : "$" + (Number(data[item].itemPrice) + 60)}</s>
+            <s>
+              {loading ? "Loading" : "$" + (Number(data[item].itemPrice) + 60)}
+            </s>
           </span>
         </div>
         <hr />
         <div className={styles.product_description_container}>
           <p className={styles.product_description_paragraph}>
-          {loading ? "Loading" : data[item].itemDescription}
+            {loading ? "Loading" : data[item].itemDescription}
           </p>
           <p className={styles.product_technical_details}>COLOR: Green</p>
         </div>
@@ -46,9 +57,21 @@ const ProductPage = () => {
               id="product-quantity"
               max="14"
               min="1"
+              value={quantity}
+              onChange={(e) => {
+                setQuantity(e.target.value);
+                console.log(quantity);
+              }}
             />
           </label>
-          <button className={styles.product_cart_btn} type="submit">
+          <button
+            className={styles.product_cart_btn}
+            type="button"
+            onClick={() => {
+              if (itemInCart) null;
+              else newCartEntry(item, quantity);
+            }}
+          >
             Add to Cart
           </button>
         </form>

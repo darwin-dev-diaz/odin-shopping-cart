@@ -10,8 +10,19 @@ import useData from "../util/useData";
 function App() {
   const [showShoppingCart, setShowShoppingCart] = useState(false);
   const [cart, setCart] = useState([]);
-  const {data, error, loading} = useData();
+  const { data, error, loading } = useData();
 
+  const newCartEntry = (key, quantity) => {
+    const newCartOBJ = {
+      itemTitle: data[key].itemTitle,
+      itemPrice: Number(data[key].itemPrice),
+      imageURL: data[key].imageURL,
+      key,
+      quantity,
+    };
+
+    setCart([...cart, newCartOBJ]);
+  };
 
   useEffect(() => {
     if (showShoppingCart) {
@@ -26,6 +37,13 @@ function App() {
 
   return (
     <div className="app">
+      <button
+        onClick={() => {
+          console.log({cart});
+        }}
+      >
+        TEST
+      </button>
       <Header onCartClick={() => setShowShoppingCart(true)} />
       {showShoppingCart ? (
         <ShoppingCart
@@ -35,7 +53,7 @@ function App() {
         />
       ) : null}
       <div className="body">
-        <Outlet context={[cart, setCart, data, error, loading]} />
+        <Outlet context={[cart, setCart, data, error, loading, newCartEntry]} />
       </div>
       <Promotion />
       <Footer />
