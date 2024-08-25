@@ -6,8 +6,13 @@ import "../styles/reset.css";
 import "../styles/App.css";
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
+import useData from "../util/useData";
 function App() {
   const [showShoppingCart, setShowShoppingCart] = useState(false);
+  const [cart, setCart] = useState({});
+  const {data, error, loading} = useData();
+
+  // useEffect(()=>{console.log(data)},[data])
 
   useEffect(() => {
     if (showShoppingCart) {
@@ -15,7 +20,6 @@ function App() {
     } else {
       document.body.classList.remove("no-scroll");
     }
-
     return () => {
       document.body.classList.remove("no-scroll");
     };
@@ -25,10 +29,14 @@ function App() {
     <div className="app">
       <Header onCartClick={() => setShowShoppingCart(true)} />
       {showShoppingCart ? (
-        <ShoppingCart onClose={() => setShowShoppingCart(false)} />
+        <ShoppingCart
+          cart={cart}
+          setCart={setCart}
+          onClose={() => setShowShoppingCart(false)}
+        />
       ) : null}
       <div className="body">
-        <Outlet />
+        <Outlet context={[cart, setCart, data, error, loading]} />
       </div>
       <Promotion />
       <Footer />

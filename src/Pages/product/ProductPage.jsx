@@ -1,45 +1,56 @@
-import "./productpage.css";
+import styles from "./productpage.module.css";
+import loadingGif from "../../assets/loading.gif"
+import { useOutletContext, useParams } from "react-router-dom";
+
 const ProductPage = () => {
+  const [cart, setCart, data, error, loading] = useOutletContext();
+  const { item } = useParams();
+
+  console.log({data, item})
+
   return (
-    <div className="product-page">
-      <div className="product-page-left">
-        <div className="product-images-container">
-          <div className="product-image">
+    <div className={styles.product_page}>
+      <div className={styles.product_page_left}>
+        <div className={styles.product_images_container}>
+          <div className={styles.product_image}>
             <img
-              src="https://res.cloudinary.com/dr2ufkyd4/image/fetch/w_300,h_300,f_webp,q_auto/https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenTshirt01.jpg?v=1675455410"
+              src={loading ? loadingGif : data[item].imageURL}
               alt="product image"
             />
           </div>
         </div>
       </div>
-      <div className="product-page-right">
-        <h2 className="product-name">Item Name</h2>
-        <div className="price-container">
-          <span className="price">$4.00</span>
-          <span className="old-price"><s>$2.30</s></span>
+      <div className={styles.product_page_right}>
+        <h2 className={styles.product_name}>{loading ? "Loading" : data[item].itemTitle}</h2>
+        <div className={styles.price_container}>
+          <span className={styles.price}>$10.00</span>
+          <span className={styles.old_price}>
+            <s>$20.00</s>
+          </span>
         </div>
         <hr />
-        <div className="product-description-container">
-          <p className="product-description-paragraph">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit odit
-            vitae voluptatibus. Consequuntur sequi assumenda vitae tempore
-            aperiam, voluptates, fugit e.
+        <div className={styles.product_description_container}>
+          <p className={styles.product_description_paragraph}>
+          {loading ? "Loading" : data[item].itemDescription}
           </p>
-          <p className="product-technical-details">COLOR: Green</p>
+          <p className={styles.product_technical_details}>COLOR: Green</p>
         </div>
-        <form noValidate="" className="product_form">
-          <label htmlFor="product-quantity" className="product-quantity-label">
+        <form noValidate className={styles.product_form}>
+          <label
+            htmlFor="product-quantity"
+            className={styles.product_quantity_label}
+          >
             QUANTITY:
             <input
               type="number"
-              className="product-quantity-input"
+              className={styles.product_quantity_input}
               name="product-quantity"
               id="product-quantity"
               max="14"
               min="1"
             />
           </label>
-          <button className="product-cart-btn" type="submit">
+          <button className={styles.product_cart_btn} type="submit">
             Add to Cart
           </button>
         </form>

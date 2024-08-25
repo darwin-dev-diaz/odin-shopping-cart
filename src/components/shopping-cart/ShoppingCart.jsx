@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import CartItem from "../cart-item/CartItem";
 
-const ShoppingCart = ({ onClose }) => {
+const ShoppingCart = ({ onClose, cart, setCart }) => {
   return (
     <div className={styles.shopping_cart_overlay}>
       <div className={styles.shopping_cart_blur} onClick={onClose}></div>
@@ -17,9 +17,11 @@ const ShoppingCart = ({ onClose }) => {
           <CartItem />
           <CartItem />
           <CartItem />
-          <Link to="/store" className={styles.shop_button} onClick={onClose}>
-            See all products
-          </Link>
+          {Object.keys(cart).length === 0 ? (
+            <Link to="/store" className={styles.shop_button} onClick={onClose}>
+              See all products
+            </Link>
+          ) : null}
         </div>
       </div>
     </div>
@@ -28,6 +30,8 @@ const ShoppingCart = ({ onClose }) => {
 
 ShoppingCart.propTypes = {
   onClose: PropTypes.func,
+  cart: PropTypes.object,
+  setCart: PropTypes.func,
 };
 
 export default ShoppingCart;

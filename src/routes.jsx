@@ -3,6 +3,7 @@ import Store from "./pages/store/Store.jsx";
 import ProductPage from "./pages/product/ProductPage.jsx";
 import Home from "./pages/home/Home.jsx";
 
+
 const routes = [
   {
     path: "/",
@@ -10,7 +11,7 @@ const routes = [
     children: [
       { index: true, element: <Home /> },
       { path: "store", element: <Store /> },
-      { path: "product", element: <ProductPage /> },
+      { path: "product/:item", element: <ProductPage /> },
     ],
   },
 ];

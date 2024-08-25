@@ -26,6 +26,7 @@ const useData = () => {
           return {
             imageURL: product.node.featuredImage.url,
             itemTitle: product.node.title,
+            itemDescription: product.node.description,
           };
         });
         setData(outputArray);
