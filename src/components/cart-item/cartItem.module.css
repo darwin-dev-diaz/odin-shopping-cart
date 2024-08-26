@@ -14,8 +14,13 @@
   height: 150px;
 }
 
+.cart_item_img > img{
+  height: 100%;
+  width: 100%;
+}
+
 .cart_item_right {
-  width: 80%;
+  width: 70%;
   padding: 10px;
   display: flex;
   flex-direction: column;

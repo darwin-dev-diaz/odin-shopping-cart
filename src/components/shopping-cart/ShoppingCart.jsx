@@ -14,15 +14,30 @@ const ShoppingCart = ({ onClose, cart, setCart }) => {
           <CloseSVG className={styles.close_btn} onClick={onClose} />
         </div>
         <div className={styles.shopping_cart_body}>
-          <CartItem />
-          <CartItem />
-          <CartItem />
           {Object.keys(cart).length === 0 ? (
             <Link to="/store" className={styles.shop_button} onClick={onClose}>
               See all products
             </Link>
-          ) : null}
+          ) : (
+            cart.map((cartItem, key) => {
+              return (
+                <CartItem
+                  imageURL={cartItem.imageURL}
+                  itemTitle={cartItem.itemTitle}
+                  itemPrice={cartItem.itemPrice}
+                  itemQuantity={cartItem.quantity}
+                  key={key}
+                />
+              );
+            })
+          )}
         </div>
+
+        {Object.keys(cart).length === 0 ? null : (
+          <Link to="/store" className={styles.checkout_button} onClick={onClose}>
+            Checkout
+          </Link>
+        )}
       </div>
     </div>
   );
@@ -30,7 +45,7 @@ const ShoppingCart = ({ onClose, cart, setCart }) => {
 
 ShoppingCart.propTypes = {
   onClose: PropTypes.func,
-  cart: PropTypes.object,
+  cart: PropTypes.array,
   setCart: PropTypes.func,
 };
 
