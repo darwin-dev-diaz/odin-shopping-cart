@@ -24,6 +24,14 @@ function App() {
     setCart([...cart, newCartOBJ]);
   };
 
+  const increaseItemQuantity = (key, newQuantity) => {
+    const item = cart.find((cartItem) => cartItem.key === key);
+    const index = (cart.indexOf(item));
+    const newCart = cart;
+    newCart.splice(index, 1, {...item, quantity: (item.quantity + Number(newQuantity))})
+    setCart(newCart);
+  };
+
   useEffect(() => {
     if (showShoppingCart) {
       document.body.classList.add("no-scroll");
@@ -39,7 +47,7 @@ function App() {
     <div className="app">
       <button
         onClick={() => {
-          console.log({cart});
+          console.log({ cart });
         }}
       >
         TEST
@@ -53,7 +61,7 @@ function App() {
         />
       ) : null}
       <div className="body">
-        <Outlet context={[cart, setCart, data, error, loading, newCartEntry]} />
+        <Outlet context={[cart, setCart, data, error, loading, newCartEntry, increaseItemQuantity]} />
       </div>
       <Promotion />
       <Footer />

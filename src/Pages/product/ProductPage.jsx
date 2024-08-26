@@ -5,8 +5,15 @@ import { useOutletContext, useParams } from "react-router-dom";
 import { useState } from "react";
 
 const ProductPage = () => {
-  const [cart, setCart, data, error, loading, newCartEntry] =
-    useOutletContext();
+  const [
+    cart,
+    setCart,
+    data,
+    error,
+    loading,
+    newCartEntry,
+    increaseItemQuantity,
+  ] = useOutletContext();
   const { item } = useParams();
   const [quantity, setQuantity] = useState(1);
   const itemInCart = cart.some((cartItem) => cartItem.key === item);
@@ -68,7 +75,7 @@ const ProductPage = () => {
             className={styles.product_cart_btn}
             type="button"
             onClick={() => {
-              if (itemInCart) null;
+              if (itemInCart) increaseItemQuantity(item, quantity);
               else newCartEntry(item, quantity);
             }}
           >
