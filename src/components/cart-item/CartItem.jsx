@@ -7,11 +7,11 @@ const CartItem = ({
   itemTitle,
   itemPrice,
   itemQuantity,
+  deleteItem,
   setCart,
   cart,
   index,
 }) => {
-
   return (
     <div className={styles.cart_item}>
       <div className={styles.cart_item_img}>
@@ -25,7 +25,10 @@ const CartItem = ({
               ${itemPrice * itemQuantity}
             </span>
           </div>
-          <DeleteSVG className={styles.delete_btn} onClick={null} />
+          <DeleteSVG
+            className={styles.delete_btn}
+            onClick={() => deleteItem(index)}
+          />
         </div>
 
         <form
@@ -69,6 +72,7 @@ CartItem.propTypes = {
   setCart: PropTypes.func,
   cart: PropTypes.array,
   index: PropTypes.number,
+  deleteItem: PropTypes.func,
 };
 
 export default CartItem;

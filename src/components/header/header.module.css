@@ -32,12 +32,12 @@
 }
 .shoppingCartContainer{
   position: relative;
+  cursor: pointer;
 
 
 }
 .shoppingCartIcon {
   width: 30px;
-  cursor: pointer;
 }
 .totalItems{
   position: absolute;

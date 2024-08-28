@@ -16,15 +16,13 @@ const Header = ({ onCartClick, totalItems }) => {
           Store
         </Link>
 
-      <div className={styles.shoppingCartContainer}>
-        <ShoppingCartSVG
-          className={styles.shoppingCartIcon}
-          onClick={onCartClick}
-        />
-        {totalItems > 0 ? <div className={styles.totalItems}>
-          {totalItems < 100 ? totalItems : "99+"}
-        </div> : null}
-        
+        <div className={styles.shoppingCartContainer} onClick={onCartClick}>
+          <ShoppingCartSVG className={styles.shoppingCartIcon} />
+          {totalItems > 0 ? (
+            <div className={styles.totalItems}>
+              {totalItems < 100 ? totalItems : "99+"}
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

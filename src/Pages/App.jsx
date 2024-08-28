@@ -29,13 +29,19 @@ function App() {
   };
 
   const increaseItemQuantity = (key, newQuantity) => {
-    const newCart = [...cart]
+    const newCart = [...cart];
     const item = cart.find((cartItem) => cartItem.key === key);
     const index = cart.indexOf(item);
     newCart.splice(index, 1, {
       ...item,
       quantity: item.quantity + Number(newQuantity),
     });
+    setCart(newCart);
+  };
+
+  const deleteItem = (key) => {
+    const newCart = [...cart];
+    newCart.splice(key, 1);
     setCart(newCart);
   };
 
@@ -52,12 +58,17 @@ function App() {
 
   return (
     <div className="app">
-      <Header totalItems={totalItems} onCartClick={() => setShowShoppingCart(true)} />
+      <Header
+        totalItems={totalItems}
+        onCartClick={() => setShowShoppingCart(true)}
+      />
       {showShoppingCart ? (
         <ShoppingCart
           cart={cart}
           setCart={setCart}
           onClose={() => setShowShoppingCart(false)}
+          totalItems={totalItems}
+          deleteItem={deleteItem}
         />
       ) : null}
       <div className="body">
