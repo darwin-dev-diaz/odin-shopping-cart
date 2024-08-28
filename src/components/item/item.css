@@ -14,8 +14,9 @@
 
 .item-image-container{
     /* background-color: azure; */
-    width: 100%;
-    height: 75%;
+    width: 260px;
+    height: 260px;
+
 }
 
 .item-image{

@@ -5,6 +5,10 @@ import PropTypes from "prop-types";
 import CartItem from "../cart-item/CartItem";
 
 const ShoppingCart = ({ onClose, cart, setCart }) => {
+  const cashTotal = cart.reduce((accumulator, cartItem) => {
+    accumulator + cartItem.quantity * cartItem.itemPrice;
+  }, 0);
+
   return (
     <div className={styles.shopping_cart_overlay}>
       <div className={styles.shopping_cart_blur} onClick={onClose}></div>
@@ -26,6 +30,9 @@ const ShoppingCart = ({ onClose, cart, setCart }) => {
                   itemTitle={cartItem.itemTitle}
                   itemPrice={cartItem.itemPrice}
                   itemQuantity={cartItem.quantity}
+                  setCart={setCart}
+                  cart={cart}
+                  index={key}
                   key={key}
                 />
               );
@@ -34,8 +41,12 @@ const ShoppingCart = ({ onClose, cart, setCart }) => {
         </div>
 
         {Object.keys(cart).length === 0 ? null : (
-          <Link to="/store" className={styles.checkout_button} onClick={onClose}>
-            Checkout
+          <Link
+            to="/store"
+            className={styles.checkout_button}
+            onClick={onClose}
+          >
+            {`Checkout (${cashTotal})`}
           </Link>
         )}
       </div>

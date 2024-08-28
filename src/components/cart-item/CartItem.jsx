@@ -2,7 +2,16 @@ import styles from "./cartItem.module.css";
 import DeleteSVG from "../../assets/DeleteSVG";
 import PropTypes from "prop-types";
 
-const CartItem = ({ imageURL, itemTitle, itemPrice, itemQuantity }) => {
+const CartItem = ({
+  imageURL,
+  itemTitle,
+  itemPrice,
+  itemQuantity,
+  setCart,
+  cart,
+  index,
+}) => {
+
   return (
     <div className={styles.cart_item}>
       <div className={styles.cart_item_img}>
@@ -19,14 +28,31 @@ const CartItem = ({ imageURL, itemTitle, itemPrice, itemQuantity }) => {
           <DeleteSVG className={styles.delete_btn} onClick={null} />
         </div>
 
-        <form noValidate="" className={styles.product_form}>
+        <form
+          noValidate=""
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+          className={styles.product_form}
+        >
           <label className={styles.product_quantity_label}>
             QUANTITY:
             <input
               type="number"
               className={styles.product_quantity_input}
-              max="14"
               min="1"
+              value={itemQuantity}
+              onChange={(e) => {
+                const newCart = [...cart];
+
+                const updatedCartItem = {
+                  ...newCart[index],
+                  quantity: Number(e.target.value),
+                };
+                newCart[index] = updatedCartItem;
+
+                setCart(newCart);
+              }}
             />
           </label>
         </form>
@@ -40,6 +66,9 @@ CartItem.propTypes = {
   itemTitle: PropTypes.string.isRequired,
   itemPrice: PropTypes.number.isRequired,
   itemQuantity: PropTypes.number.isRequired,
+  setCart: PropTypes.func,
+  cart: PropTypes.object,
+  index: PropTypes.number,
 };
 
 export default CartItem;
