@@ -6,15 +6,17 @@ import CartItem from "../cart-item/CartItem";
 
 const ShoppingCart = ({ onClose, cart, setCart }) => {
   const cashTotal = cart.reduce((accumulator, cartItem) => {
-    return accumulator + (cartItem.quantity * cartItem.itemPrice);
-  }, 0);  
+    return accumulator + cartItem.quantity * cartItem.itemPrice;
+  }, 0);
 
   return (
     <div className={styles.shopping_cart_overlay}>
       <div className={styles.shopping_cart_blur} onClick={onClose}></div>
       <div className={styles.shopping_cart}>
         <div className={styles.shopping_cart_header}>
-          <h2 className={styles.shopping_cart_title}>Your cart is empty</h2>
+          <h2 className={styles.shopping_cart_title}>
+            {Object.keys(cart).length === 0 ? "Your cart is empty" : "la"}
+          </h2>
           <CloseSVG className={styles.close_btn} onClick={onClose} />
         </div>
         <div className={styles.shopping_cart_body}>
@@ -46,7 +48,7 @@ const ShoppingCart = ({ onClose, cart, setCart }) => {
             className={styles.checkout_button}
             onClick={onClose}
           >
-            {`Checkout (${cashTotal})`}
+            {`Checkout ($${cashTotal})`}
           </Link>
         )}
       </div>

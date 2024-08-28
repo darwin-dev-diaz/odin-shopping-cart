@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
-const ShoppingCartSVG = ({ onClick }) => {
+const ShoppingCartSVG = ({ onClick, className }) => {
   return (
     <>
       <svg
-        className="shopping-cart-icon"
+        className={className}
         xmlns="http://www.w3.org/2000/svg"
         // height="24px"
         // width="24px"
@@ -20,6 +20,7 @@ const ShoppingCartSVG = ({ onClick }) => {
 
 ShoppingCartSVG.propTypes = {
   onClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default ShoppingCartSVG;

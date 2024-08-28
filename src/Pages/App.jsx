@@ -12,6 +12,10 @@ function App() {
   const [cart, setCart] = useState([]);
   const { data, error, loading } = useData();
 
+  const totalItems = cart.reduce((accumulator, cartItem) => {
+    return accumulator + cartItem.quantity;
+  }, 0);
+
   const newCartEntry = (key, quantity) => {
     const newCartOBJ = {
       itemTitle: data[key].itemTitle,
@@ -25,10 +29,13 @@ function App() {
   };
 
   const increaseItemQuantity = (key, newQuantity) => {
+    const newCart = [...cart]
     const item = cart.find((cartItem) => cartItem.key === key);
-    const index = (cart.indexOf(item));
-    const newCart = cart;
-    newCart.splice(index, 1, {...item, quantity: (item.quantity + Number(newQuantity))})
+    const index = cart.indexOf(item);
+    newCart.splice(index, 1, {
+      ...item,
+      quantity: item.quantity + Number(newQuantity),
+    });
     setCart(newCart);
   };
 
@@ -45,14 +52,7 @@ function App() {
 
   return (
     <div className="app">
-      <button
-        onClick={() => {
-          console.log({ cart });
-        }}
-      >
-        TEST
-      </button>
-      <Header onCartClick={() => setShowShoppingCart(true)} />
+      <Header totalItems={totalItems} onCartClick={() => setShowShoppingCart(true)} />
       {showShoppingCart ? (
         <ShoppingCart
           cart={cart}
@@ -61,7 +61,17 @@ function App() {
         />
       ) : null}
       <div className="body">
-        <Outlet context={[cart, setCart, data, error, loading, newCartEntry, increaseItemQuantity]} />
+        <Outlet
+          context={[
+            cart,
+            setCart,
+            data,
+            error,
+            loading,
+            newCartEntry,
+            increaseItemQuantity,
+          ]}
+        />
       </div>
       <Promotion />
       <Footer />

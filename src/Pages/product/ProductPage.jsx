@@ -67,7 +67,6 @@ const ProductPage = () => {
               value={quantity}
               onChange={(e) => {
                 setQuantity(e.target.value);
-                console.log(quantity);
               }}
             />
           </label>

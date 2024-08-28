@@ -1,22 +1,31 @@
-import "./header.css";
+import styles from "./header.module.css";
 import LogoSVG from "../../assets/LogoSVG";
 import ShoppingCartSVG from "../../assets/ShoppingCartSVG";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
-const Header = ({onCartClick}) => {
+const Header = ({ onCartClick, totalItems }) => {
   return (
-    <div className="header">
-      <LogoSVG className="header-logo" />
-      <div className="header-btn-group">
-        <Link to="/" className="header-btn">
+    <div className={styles.header}>
+      <LogoSVG className={styles.headerLogo} />
+      <div className={styles.headerBtnGroup}>
+        <Link to="/" className={styles.headerBtn}>
           Home
         </Link>
-        <Link to="store" className="header-btn">
+        <Link to="store" className={styles.headerBtn}>
           Store
         </Link>
 
-        <ShoppingCartSVG onClick={onCartClick}/>
+      <div className={styles.shoppingCartContainer}>
+        <ShoppingCartSVG
+          className={styles.shoppingCartIcon}
+          onClick={onCartClick}
+        />
+        {totalItems > 0 ? <div className={styles.totalItems}>
+          {totalItems < 100 ? totalItems : "99+"}
+        </div> : null}
+        
+        </div>
       </div>
     </div>
   );
@@ -24,6 +33,7 @@ const Header = ({onCartClick}) => {
 
 Header.propTypes = {
   onCartClick: PropTypes.func,
-}
+  totalItems: PropTypes.number,
+};
 
 export default Header;

@@ -1,8 +1,10 @@
-const LogoSVG = () => {
+import PropTypes from "prop-types";
+
+const LogoSVG = ({className}) => {
   return (
     <>
       <svg
-      className="header-logo"
+      className={className}
         xmlns="http://www.w3.org/2000/svg"
         // height="24px"
         // width="24px"
@@ -13,6 +15,10 @@ const LogoSVG = () => {
       </svg>
     </>
   );
+};
+
+LogoSVG.propTypes = {
+  className: PropTypes.string,
 };
 
 export default LogoSVG;
