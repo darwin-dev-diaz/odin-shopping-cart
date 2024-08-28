@@ -6,8 +6,8 @@ import CartItem from "../cart-item/CartItem";
 
 const ShoppingCart = ({ onClose, cart, setCart }) => {
   const cashTotal = cart.reduce((accumulator, cartItem) => {
-    accumulator + cartItem.quantity * cartItem.itemPrice;
-  }, 0);
+    return accumulator + (cartItem.quantity * cartItem.itemPrice);
+  }, 0);  
 
   return (
     <div className={styles.shopping_cart_overlay}>

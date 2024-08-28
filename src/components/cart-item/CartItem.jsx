@@ -67,7 +67,7 @@ CartItem.propTypes = {
   itemPrice: PropTypes.number.isRequired,
   itemQuantity: PropTypes.number.isRequired,
   setCart: PropTypes.func,
-  cart: PropTypes.object,
+  cart: PropTypes.array,
   index: PropTypes.number,
 };
 
