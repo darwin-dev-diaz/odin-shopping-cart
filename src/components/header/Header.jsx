@@ -7,7 +7,11 @@ import PropTypes from "prop-types";
 const Header = ({ onCartClick, totalItems }) => {
   return (
     <div className={styles.header}>
-      <LogoSVG className={styles.headerLogo} />
+      <Link className={styles.headerLogoContainer} to="/">
+      
+        <LogoSVG className={styles.headerLogo} />
+      </Link>
+
       <div className={styles.headerBtnGroup}>
         <Link to="/" className={styles.headerBtn}>
           Home
