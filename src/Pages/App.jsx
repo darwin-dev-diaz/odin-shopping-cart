@@ -7,6 +7,8 @@ import "../styles/App.css";
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import useData from "../util/useData";
+import ScrollToTop from "../components/ScrollToTop";
+
 function App() {
   const [showShoppingCart, setShowShoppingCart] = useState(false);
   const [cart, setCart] = useState([]);
@@ -58,6 +60,7 @@ function App() {
 
   return (
     <div className="app">
+      <ScrollToTop />
       <Header
         totalItems={totalItems}
         onCartClick={() => setShowShoppingCart(true)}
