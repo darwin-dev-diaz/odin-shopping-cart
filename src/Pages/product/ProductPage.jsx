@@ -62,7 +62,7 @@ const ProductPage = () => {
               className={styles.product_quantity_input}
               name="product-quantity"
               id="product-quantity"
-              max="14"
+              max="20"
               min="1"
               value={quantity}
               onChange={(e) => {

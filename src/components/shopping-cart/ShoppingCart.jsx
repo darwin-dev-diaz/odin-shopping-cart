@@ -4,7 +4,14 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import CartItem from "../cart-item/CartItem";
 
-const ShoppingCart = ({ onClose, cart, setCart, totalItems, deleteItem }) => {
+const ShoppingCart = ({
+  onClose,
+  cart,
+  setCart,
+  totalItems,
+  deleteItem,
+  wipeCart,
+}) => {
   const cashTotal = cart.reduce((accumulator, cartItem) => {
     return accumulator + cartItem.quantity * cartItem.itemPrice;
   }, 0);
@@ -15,7 +22,9 @@ const ShoppingCart = ({ onClose, cart, setCart, totalItems, deleteItem }) => {
       <div className={styles.shopping_cart}>
         <div className={styles.shopping_cart_header}>
           <h2 className={styles.shopping_cart_title}>
-            {Object.keys(cart).length === 0 ? "Your cart is empty" : `Cart (${totalItems} items )`}
+            {Object.keys(cart).length === 0
+              ? "Your cart is empty"
+              : `Cart (${totalItems} items )`}
           </h2>
           <CloseSVG className={styles.close_btn} onClick={onClose} />
         </div>
@@ -47,7 +56,10 @@ const ShoppingCart = ({ onClose, cart, setCart, totalItems, deleteItem }) => {
           <Link
             to="/store"
             className={styles.checkout_button}
-            onClick={onClose}
+            onClick={() => {
+              onClose();
+              wipeCart();
+            }}
           >
             {`Checkout ($${cashTotal})`}
           </Link>
@@ -63,6 +75,7 @@ ShoppingCart.propTypes = {
   setCart: PropTypes.func,
   totalItems: PropTypes.number,
   deleteItem: PropTypes.func,
+  wipeCart: PropTypes.func,
 };
 
 export default ShoppingCart;

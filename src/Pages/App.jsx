@@ -44,8 +44,12 @@ function App() {
   const deleteItem = (key) => {
     const newCart = [...cart];
     newCart.splice(key, 1);
-    setCart(newCart);
+    setCart(()=>newCart);
   };
+
+  const wipeCart = () => {
+    setCart([]);
+  }
 
   useEffect(() => {
     if (showShoppingCart) {
@@ -88,6 +92,7 @@ function App() {
           onClose={() => setShowShoppingCart(false)}
           totalItems={totalItems}
           deleteItem={deleteItem}
+          wipeCart={wipeCart}
         />
       ) : null}
       <div className="body">
