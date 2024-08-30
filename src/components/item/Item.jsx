@@ -14,7 +14,7 @@ const Item = ({imageURL = loading, itemPrice = 0 , itemName = "Loading"}) => {
           <div className="item-name">{itemName}</div>
         </div>
         <div className="item-info-container-bottom">
-          <div className="item-subtext">Subtext</div>
+          {/* <div className="item-subtext">Subtext</div> */}
           <div className="item-price">${itemPrice}</div>
         </div>
       </div>
