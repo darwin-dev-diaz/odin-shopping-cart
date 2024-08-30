@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 const Header = ({ onCartClick, totalItems }) => {
   return (
-    <div className={styles.header}>
+    <div className={`${styles.header}`} id="header">
       <Link className={styles.headerLogoContainer} to="/">
       
         <LogoSVG className={styles.headerLogo} />

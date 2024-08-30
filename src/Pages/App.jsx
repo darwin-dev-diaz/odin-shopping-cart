@@ -58,6 +58,22 @@ function App() {
     };
   }, [showShoppingCart]);
 
+  useEffect(()=>{
+
+    const header = document.getElementById("header");
+    const sticky = header.offsetTop;
+
+    function myFunction() {
+      if (window.scrollY > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+    window.onscroll = function() {myFunction()};
+
+  },[])
+
   return (
     <div className="app">
       <ScrollToTop />

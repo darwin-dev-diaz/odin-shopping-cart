@@ -18,3 +18,13 @@
   height: 100%;
   overflow: hidden;
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.sticky + .body {
+  padding-top: 120px;
+}
