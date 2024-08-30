@@ -51,7 +51,7 @@ const ProductPage = () => {
           </p>
           <p className={styles.product_technical_details}>COLOR: Green</p>
         </div>
-        <form noValidate className={styles.product_form}>
+        <form noValidate className={styles.product_form} onSubmit={e=>e.preventDefault()}>
           <label
             htmlFor="product-quantity"
             className={styles.product_quantity_label}
