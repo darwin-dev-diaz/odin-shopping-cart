@@ -1,0 +1,30 @@
+@import url("../../styles/colors.css");
+
+
+.store{
+    /* background-color: var(--white-green); */
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+h1{
+    font-size: 40px;
+}
+.items_container{
+    /* background-color: pink; */
+    width: auto;
+    height: 100%;
+    padding: 60px 0 60px 0;
+    display: grid;
+    grid-template-columns: repeat(3,300px);
+    grid-template-rows: repeat(4,350px);
+}
+
+.item_link{
+    text-decoration: none;
+    color: black;
+}
