@@ -5,7 +5,7 @@ import ShoppingCart from "../components/shopping-cart/ShoppingCart";
 import "../styles/reset.css";
 import "../styles/App.css";
 import { Outlet } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import useData from "../util/useData";
 import ScrollToTop from "../components/ScrollToTop";
 
@@ -14,9 +14,12 @@ function App() {
   const [cart, setCart] = useState([]);
   const { data, error, loading } = useData();
 
-  const totalItems = cart.reduce((accumulator, cartItem) => {
-    return accumulator + cartItem.quantity;
-  }, 0);
+  
+  const totalItems = useMemo(() => {
+    return cart.reduce((accumulator, cartItem) => {
+      return accumulator + cartItem.quantity;
+    }, 0);
+  }, [cart]);
 
   const newCartEntry = (key, quantity) => {
     const newCartOBJ = {
@@ -44,12 +47,12 @@ function App() {
   const deleteItem = (key) => {
     const newCart = [...cart];
     newCart.splice(key, 1);
-    setCart(()=>newCart);
+    setCart(() => newCart);
   };
 
   const wipeCart = () => {
     setCart([]);
-  }
+  };
 
   useEffect(() => {
     if (showShoppingCart) {
@@ -62,8 +65,7 @@ function App() {
     };
   }, [showShoppingCart]);
 
-  useEffect(()=>{
-
+  useEffect(() => {
     const header = document.getElementById("header");
     const sticky = header.offsetTop;
 
@@ -74,9 +76,10 @@ function App() {
         header.classList.remove("sticky");
       }
     }
-    window.onscroll = function() {myFunction()};
-
-  },[])
+    window.onscroll = function () {
+      myFunction();
+    };
+  }, []);
 
   return (
     <div className="app">
