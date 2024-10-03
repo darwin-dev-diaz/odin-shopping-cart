@@ -11,7 +11,7 @@
   width: 65%;
   height: 100%;
   background-color: rgba(54, 54, 54, 0.606);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(0.3125rem);
 }
 .shopping_cart {
   height: 100%;
@@ -19,34 +19,34 @@
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
-  gap: 20px
+  gap: 1.25rem
 }
 
 .shopping_cart_header {
-  height: 70px;
+  height: 4.375rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  margin-bottom: 45px;
+  padding: 1.25rem;
+  margin-bottom: 2.8125rem;
 }
 
 .shopping_cart_title {
-  font-size: 25px;
+  font-size: 1.5625rem;
 }
 
 .close_btn {
-  height: 35px;
-  width: 35px;
+  height: 2.1875rem;
+  width: 2.1875rem;
   cursor: pointer;
 }
 .shopping_cart_body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  gap: 20px;
-  height: 550px;
+  padding: 1.25rem;
+  gap: 1.25rem;
+  height: 34.375rem;
   overflow-y: scroll;
 }
 .shop_button {
@@ -54,14 +54,14 @@
   display: inline-block;
   outline: none;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 0.0625rem solid transparent;
   text-align: left;
   vertical-align: top;
-  padding: 20px 30px 20px 30px;
+  padding: 1.25rem 1.875rem 1.25rem 1.875rem;
   background-color: var(--medium-green);
-  font-size: 14px;
-  letter-spacing: 0.16px;
-  min-height: 48px;
+  font-size: 0.875rem;
+  letter-spacing: 0.01rem;
+  min-height: 3rem;
   line-height: 1.29;
   color: var(--white);
   font-weight: 400;
@@ -75,14 +75,14 @@
   display: inline-block;
   outline: none;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 0.0625rem solid transparent;
   text-align: left;
   vertical-align: top;
-  padding: 20px 30px 20px 30px;
+  padding: 1.25rem 1.875rem 1.25rem 1.875rem;
   background-color: var(--medium-green);
-  font-size: 14px;
-  letter-spacing: 0.16px;
-  min-height: 48px;
+  font-size: 0.875rem;
+  letter-spacing: 0.01rem;
+  min-height: 3rem;
   line-height: 1.29;
   color: var(--white);
   font-weight: 400;

@@ -2,15 +2,15 @@
 
 .company_message{
     display: flex;
-    padding: 60px 120px 60px 120px;
+    padding: 3.75rem 7.5rem 3.75rem 7.5rem;
     justify-content: space-evenly;
     align-items: start;
     background-color: var(--white-green);
 }
 
 .image_container{
-    height: 600px;
-    width: 400px;
+    height: 37.5rem;
+    width: 25rem;
 }
 
 .image_container > img{
@@ -21,19 +21,19 @@
 .company_message_left{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
 }
 .company_message_title{
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 .company_message_text{
-    width: 500px;
+    width: 31.25rem;
 }
 
 .company_message_shop_btn{
-    text-underline-offset: 6px;
-    font-size: 16px;
-    letter-spacing: 1.5px;
+    text-underline-offset: 0.375rem;
+    font-size: 1rem;
+    letter-spacing: 0.09375rem;
     color: black;
     font-weight: 600;
 }
